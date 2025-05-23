@@ -1,16 +1,35 @@
-1. Instalation requirements:
+# TodoMVC Playwright Tests
 
-pip install -r requirements.txt
-playwright install
+This repository contains automated tests for the TodoMVC demo site using Playwright with Python.
 
+## Requirements
+- Python 3.7+
+- Playwright
 
-2. Run the tests command in the terminal:
+## Installation
+1. Clone the repository:
+   git clone https://github.com/LiviuHolban/NXLog.git
+   cd NXLog
 
-python -m pytest test1.py --html=report.html --self-contained-html
+2. Create a virtual environment and activate it:
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
 
-Modify the "test1.py" to the next files with counters in file name 2,3,4,5,6,7 to test/validate all the tests.
+3. Install dependencies:
+   pip install -r requirements.txt
 
+4. Install Playwright browsers:
+   playwright install
 
-3. Open the report.html file in your browser to see the test results.
+## Running Tests
+To run all tests:
+   python -m pytest .\tests\test_todo.py --html=report.html --self-contained-html
+   or just
+   pytest .\tests\test_todo.py --html=report.html --self-contained-html
 
+To run a specific test from inside the class:
+    pytest tests/test_todo.py::TestTodoMVC::test_add_todo_item_english_text 
+
+To run a specific test file:
+   python -m pytest .\tests\test1.py --html=report.html --self-contained-html
 
